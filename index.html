@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Tuna LOML❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg, #fff0f3, #ffe4ea, #fff7f8);
+            color: #432b31;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 28px;
+            padding: 35px 25px;
+            box-shadow: 0 15px 45px rgba(120, 40, 65, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* INTRO */
+
+        .intro {
+            text-align: center;
+            padding: 20px 5px 30px;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: heartbeat 1.6s infinite;
+            margin-bottom: 15px;
+        }
+
+        .intro h1 {
+            font-size: 42px;
+            color: #b83d60;
+            margin-bottom: 12px;
+        }
+
+        .intro h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #754552;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #765761;
+        }
+
+        /* DIVIDER */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 25px 0;
+            color: #d56b88;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            height: 1px;
+            background: #f1c4cf;
+            flex: 1;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            margin: 25px 0;
+            padding: 24px;
+            background: #fff6f8;
+            border-radius: 20px;
+            border-left: 4px solid #d45a78;
+        }
+
+        .section h3 {
+            color: #b83d60;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* EMPHASIS */
+
+        .deep-sorry {
+            text-align: center;
+            padding: 28px 15px;
+            margin: 25px 0;
+            background: linear-gradient(135deg, #fff0f4, #ffe4eb);
+            border-radius: 22px;
+        }
+
+        .deep-sorry .emoji {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .deep-sorry h2 {
+            color: #a92f53;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .deep-sorry p {
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        button {
+            border: none;
+            border-radius: 30px;
+            padding: 15px 24px;
+            margin: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s;
+            font-family: Arial, sans-serif;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        .primary {
+            background: #c94d6e;
+            color: white;
+            box-shadow: 0 6px 15px rgba(190, 65, 95, 0.2);
+        }
+
+        .secondary {
+            background: #ffe0e8;
+            color: #a23757;
+        }
+
+        /* HIDDEN MESSAGE */
+
+        .hidden-message {
+            display: none;
+            padding: 24px;
+            background: #fff1f5;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 17px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .hidden-message.show {
+            display: block;
+        }
+
+        /* FORGIVENESS */
+
+        .forgive-section {
+            text-align: center;
+            margin-top: 35px;
+            padding: 25px 10px;
+        }
+
+        .forgive-section h2 {
+            font-size: 25px;
+            color: #a93657;
+            margin-bottom: 10px;
+        }
+
+        .forgive-section p {
+            color: #765761;
+            line-height: 1.6;
+        }
+
+        .response {
+            text-align: center;
+            min-height: 35px;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #a93657;
+        }
+
+        /* SIGNATURE */
+
+        .signature {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #f0cbd4;
+        }
+
+        .signature p {
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .signature .name {
+            font-size: 21px;
+            color: #b83d60;
+            margin-top: 10px;
+        }
+
+        /* FLOATING HEARTS */
+
+        .floating-heart {
+            position: fixed;
+            bottom: -40px;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatUp 6s linear forwards;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 25px 16px;
+                border-radius: 22px;
+            }
+
+            .intro h1 {
+                font-size: 34px;
+            }
+
+            .intro h2 {
+                font-size: 22px;
+            }
+
+            .heart {
+                font-size: 55px;
+            }
+
+            .section {
+                padding: 20px 17px;
+            }
+
+            .section p {
+                font-size: 15.5px;
+                line-height: 1.8;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+            <div class="heart">💔</div>
+
+            <h1>For Tuna LOML</h1>
+
+            <h2>I'm truly sorry. 🥺</h2>
+
+            <p>
+                There are some things that are difficult to say out loud.
+                So today, I wanted to put my heart into words.
+            </p>
+
+        </div>
+
+
+        <div class="divider">❤️</div>
+
+
+        <!-- MAIN APOLOGY -->
+
+        <div class="section">
+
+            <h3>🥺 Today, I feel like apologizing to you...</h3>
+
+            <p>
+                Today I feel like apologizing to you.
+                I want to apologize for all the hurt I caused you,
+                from the moment I told you that I have feelings for you
+                until now.
+            </p>
+
+            <p>
+                My feelings for you were true and still are true.
+                But how that love quickly became a source of sorrow
+                for you is one thing I could not have foreseen,
+                and I deeply regret it. 😔
+            </p>
+
+            <p>
+                And honestly, I feel embarrassed about it.
+                I am sorry.
+            </p>
+
+        </div>
+
+
+        <!-- HURT -->
+
+        <div class="section">
+
+            <h3>💔 I'm sorry for the hurt I caused you</h3>
+
+            <p>
+                I am sorry for my inconsistency in loving you.
+                I am sorry for the hurtful words.
+                I am sorry for the heartbreaks —
+                things that stirred nothing but tears from your eyes
+                and caused deep sorrow in your heart. 😢
+            </p>
+
+            <p>
+                You always held me close to you, if not closest,
+                and all I did was break you —
+                someone most vulnerable to me.
+            </p>
+
+            <p>
+                <strong>I am deeply sorry. 🙏🏽</strong>
+            </p>
+
+        </div>
+
+
+        <!-- EMOTIONS -->
+
+        <div class="deep-sorry">
+
+            <div class="emoji">😔💔🥺</div>
+
+            <h2>I messed with your heart.</h2>
+
+            <p>
+                I am sorry for playing with your feelings
+                as though they were a toy.
+                I am sorry for disrespecting you.
+            </p>
+
+            <br>
+
+            <p>
+                I messed with your emotions.
+                I messed with your soul and mind.
+                <strong>I messed with your heart.</strong>
+            </p>
+
+        </div>
+
+
+        <!-- MY ACTIONS -->
+
+        <div class="section">
+
+            <h3>😔 I need to be honest about my actions</h3>
+
+            <p>
+                I made decisions and couldn't care to think about
+                your point of view.
+            </p>
+
+            <p>
+                I am guilty of spending time till late with other girls,
+                knowing that my attention belongs to no other girl
+                but you.
+            </p>
+
+            <p>
+                Yes, sometimes you would call while I was with them
+                and all I did was silence my phone and flip the phone
+                upside down.
+            </p>
+
+            <p>
+                I spent some of my money on them knowing well
+                that I have you in my life.
+            </p>
+
+            <p>
+                <strong>I am sorry. 😔</strong>
+            </p>
+
+        </div>
+
+
+        <!-- Flora -->
+
+        <div class="section">
+
+            <h3>💔 I am sorry for the attention I gave elsewhere</h3>
+
+            <p>
+                Other times I would be texting with Flora,
+                enjoying her attention, ignoring your replies.
+            </p>
+
+            <p>
+                Some guys would say sharing this kind of information
+                with your lady is a big mistake.
+            </p>
+
+            <p>
+                But I just want you to really see me through my actions.
+                I don't want to hide behind excuses.
+            </p>
+
+            <p>
+                <strong>I am sorry. 🥺</strong>
+            </p>
+
+        </div>
+
+
+        <!-- TRUST -->
+
+        <div class="section">
+
+            <h3>🙏🏽 I am sorry for not trusting you</h3>
+
+            <p>
+                My introduction in your life demanded separation
+                from your long-term friends.
+                Yes, I was insecure.
+            </p>
+
+            <p>
+                I am sorry if I ever said you don't love God,
+                your creator.
+            </p>
+
+            <p>
+                I am sorry for thinking that you were capable of
+                sleeping around and having casual sex with men.
+            </p>
+
+            <p>
+                I am sorry for not trusting you.
+                I am sorry for doubting your character.
+            </p>
+
+            <p>
+                You did not deserve that from me. 💔
+            </p>
+
+        </div>
+
+
+        <!-- REFLECTION -->
+
+        <div class="deep-sorry">
+
+            <div class="emoji">😢🙏🏽</div>
+
+            <h2>There is so much I regret.</h2>
+
+            <p>
+                There are so many things I did which,
+                if I was writing this together with you,
+                you would be reminding me of.
+            </p>
+
+            <br>
+
+            <p>
+                I mean, who would have thought all this would come from me,
+                given how we were as friends?
+            </p>
+
+        </div>
+
+
+        <!-- ABOUT HER -->
+
+        <div class="section">
+
+            <h3>❤️ What I want you to know about you</h3>
+
+            <p>
+                You are such a beautiful young woman
+                with a sweet soul,
+                so undeserving of all this misery.
+            </p>
+
+            <p>
+                You deserved tenderness.
+                You deserved honesty.
+                You deserved trust.
+                You deserved consistency.
+            </p>
+
+            <p>
+                And instead, I gave you reasons to hurt.
+            </p>
+
+            <p>
+                <strong>
+                    For that, Tuna, I am truly sorry. 😔💔
+                </strong>
+            </p>
+
+        </div>
+
+
+        <!-- FINAL APOLOGY -->
+
+        <div class="deep-sorry">
+
+            <div class="emoji">🥺💔🙏🏽</div>
+
+            <h2>Please forgive me.</h2>
+
+            <p>
+                Please find it in your heart to forgive me.
+            </p>
+
+            <br>
+
+            <p>
+                I want to continue to change myself for you.
+                I want to commit myself to you.
+                I want to love you correctly -
+                things I should have done from day one.
+            </p>
+
+            <br>
+
+            <p>
+                I always knew you loved me
+                and mistook that for entitlement.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    I am deeply, deeply sorry.
+                </strong>
+            </p>
+
+        </div>
+
+
+        <!-- INTERACTIVE BUTTON -->
+
+        <div class="buttons">
+
+            <button class="primary" id="heartButton">
+                ❤️ I want to say one more thing
+            </button>
+
+            <button class="secondary" id="hugButton">
+                🥺 Send Tuna a hug
+            </button>
+
+        </div>
+
+
+        <!-- HIDDEN MESSAGE -->
+
+        <div class="hidden-message" id="hiddenMessage">
+
+            <p>
+                Tuna...
+            </p>
+
+            <br>
+
+            <p>
+                I don't expect a website to fix what I broke.
+                I don't expect these words to erase your pain.
+            </p>
+
+            <br>
+
+            <p>
+                I only hope that one day,
+                through my actions and not just my words,
+                I can show you that I truly meant this apology.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    I love you.
+                    I am sorry.
+                    And I want to do better. ❤️
+                </strong>
+            </p>
+
+        </div>
+
+
+        <!-- FORGIVENESS -->
+
+        <div class="forgive-section">
+
+            <h2>🥺 Can you forgive me?</h2>
+
+            <p>
+                You don't have to answer immediately.
+                Whatever you feel, I will understand.
+            </p>
+
+            <div class="buttons">
+
+                <button class="primary" id="forgiveButton">
+                    ❤️ I forgive you
+                </button>
+
+                <button class="secondary" id="timeButton">
+                    😔 I need some time
+                </button>
+
+            </div>
+
+            <div class="response" id="response"></div>
+
+        </div>
+
+
+        <!-- SIGNATURE -->
+
+        <div class="signature">
+
+            <p>
+                "I am not asking you to forget what happened.
+                I am asking for the chance to show you
+                that I can become better."
+            </p>
+
+            <div class="name">
+                With a truly sorry heart ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* -------------------------
+       GET ELEMENTS
+    ------------------------- */
+
+    const heartButton =
+        document.getElementById("heartButton");
+
+    const hugButton =
+        document.getElementById("hugButton");
+
+    const hiddenMessage =
+        document.getElementById("hiddenMessage");
+
+    const forgiveButton =
+        document.getElementById("forgiveButton");
+
+    const timeButton =
+        document.getElementById("timeButton");
+
+    const response =
+        document.getElementById("response");
+
+
+    /* -------------------------
+       ONE MORE THING BUTTON
+    ------------------------- */
+
+    heartButton.addEventListener("click", function () {
+
+        hiddenMessage.classList.toggle("show");
+
+        if (hiddenMessage.classList.contains("show")) {
+
+            heartButton.innerHTML =
+                "💞 Hide my final message";
+
+            createHearts(12);
+
+        } else {
+
+            heartButton.innerHTML =
+                "❤️ I want to say one more thing";
+
+        }
+
+    });
+
+
+    /* -------------------------
+       HUG BUTTON
+    ------------------------- */
+
+    hugButton.addEventListener("click", function () {
+
+        response.innerHTML =
+            "🤗 A very big hug for Kulimbwanji. ❤️";
+
+        createHearts(20);
+
+    });
+
+
+    /* -------------------------
+       FORGIVENESS
+    ------------------------- */
+
+    forgiveButton.addEventListener("click", function () {
+
+        response.innerHTML =
+            "🥹❤️ Thank you, Kulimbwanji. I promise I won't take that forgiveness for granted.";
+
+        createHearts(30);
+
+        forgiveButton.innerHTML =
+            "❤️ Thank you";
+
+        forgiveButton.disabled = true;
+
+    });
+
+
+    /* -------------------------
+       NEED TIME
+    ------------------------- */
+
+    timeButton.addEventListener("click", function () {
+
+        response.innerHTML =
+            "😔 I understand. Take all the time you need. I will respect your feelings. ❤️";
+
+        timeButton.innerHTML =
+            "❤️ I understand";
+
+    });
+
+
+    /* -------------------------
+       FLOATING HEARTS
+    ------------------------- */
+
+    function createHearts(number) {
+
+        const heartTypes = [
+            "❤️",
+            "💔",
+            "💕",
+            "💗",
+            "💖",
+            "🥺",
+            "😔"
+        ];
+
+        for (let i = 0; i < number; i++) {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            heart.innerHTML =
+                heartTypes[
+                    Math.floor(
+                        Math.random() *
+                        heartTypes.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (18 + Math.random() * 22) + "px";
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+
+                heart.remove();
+
+            }, 7000);
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
